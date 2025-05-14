@@ -4,15 +4,15 @@ My personalized Neovim configuration for a modern, efficient coding experience.
 
 ## Features
 
-- 🚀 Optimized startup time with lazy-loading plugins via [lazy.nvim](lua/lukynet/lazy.lua)
-- 🎨 Modern and clean UI with [Catppuccin](lua/plugins/catppuccin.lua) theme and custom [lualine](lua/plugins/lua-line.lua)
-- 🧠 Intelligent code completion via LSP with Mason and nvim-cmp
-- 🔍 Fuzzy finding with [Telescope](lua/plugins/telescope.lua)
-- 📂 Quick file navigation with [Harpoon](lua/plugins/haroppn.lua) and Netrw
-- 📝 Enhanced editing with [Treesitter](lua/plugins/treesitter.lua) syntax highlighting and [Comment.nvim](lua/plugins/comment.lua)
-- 🧩 Version control visualization in statusline
-- ⚡ Seamless tmux integration with [vim-tmux-navigator](lua/plugins/vtn.lua)
-- 🔄 Undo history visualization with [undotree](lua/plugins/undotree.lua)
+- Lazy-loaded plugins using [lazy.nvim](lua/lukynet/lazy.lua)
+- UI with [Catppuccin](lua/plugins/catppuccin.lua) colorscheme and [lualine](lua/plugins/lua-line.lua)
+- Code completion with LSP with Mason and nvim-cmp
+- Fuzzy finding with [Telescope](lua/plugins/telescope.lua)
+- File navigation with [Harpoon](lua/plugins/haroppn.lua) and Netrw
+- [Treesitter](lua/plugins/treesitter.lua) syntax highlighting
+- [Comment.nvim](lua/plugins/comment.lua) for smart commenting
+- Tmux integration with [vim-tmux-navigator](lua/plugins/vtn.lua)
+- Undo history visualization with [undotree](lua/plugins/undotree.lua)
 
 ## Key Mappings
 
@@ -20,7 +20,7 @@ My personalized Neovim configuration for a modern, efficient coding experience.
 |---------------|------|-----------------------------------|-------------------|
 | `<leader>pf`  | N    | Find files                        | Telescope         |
 | `<leader>pg`  | N    | Live grep                         | Telescope         |
-| `<leader>pl`  | N    | List open buffers                 | Telescope         |
+| `<leader>pl`  | N    | Find files within git repository  | Telescope         |
 | `<leader>pv`  | N    | Toggle file explorer              | Netrw             |
 | `<leader>u`   | N    | Toggle undo history visualization | Undotree          |
 | `<C-h/j/k/l>` | N    | Navigate between windows          | vim-tmux-navigator|

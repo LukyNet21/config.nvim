@@ -21,7 +21,7 @@ return {
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
-       }),
+        }),
         snippet = {
           expand = function(args)
             vim.snippet.expand(args.body)
@@ -41,7 +41,7 @@ return {
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
       { 'rafamadriz/friendly-snippets' },
-      {'L3MON4D3/LuaSnip'},
+      { 'L3MON4D3/LuaSnip' },
     },
     init = function()
       -- Reserve a space in the gutter
