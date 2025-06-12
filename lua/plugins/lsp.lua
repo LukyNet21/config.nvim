@@ -8,13 +8,19 @@ return {
   -- Autocompletion
   {
     'hrsh7th/nvim-cmp',
+    dependencies = {
+      { 'rafamadriz/friendly-snippets' },
+      { 'l3mon4d3/luasnip' },
+    },
     event = 'InsertEnter',
     config = function()
       local cmp = require('cmp')
+      require('luasnip.loaders.from_vscode').lazy_load()
 
       cmp.setup({
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'luasnip' },
         },
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
@@ -24,7 +30,7 @@ return {
         }),
         snippet = {
           expand = function(args)
-            vim.snippet.expand(args.body)
+            require('luasnip').lsp_expand(args.body)
           end,
         },
       })
@@ -40,8 +46,6 @@ return {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
-      { 'rafamadriz/friendly-snippets' },
-      { 'L3MON4D3/LuaSnip' },
     },
     init = function()
       -- Reserve a space in the gutter
@@ -76,6 +80,7 @@ return {
           vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
           vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
           vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+          vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
         end,
       })
 
