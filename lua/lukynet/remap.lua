@@ -12,3 +12,13 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Delete and paste without af
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy current line to system clipboard" })
+
+-- Disable arrow keys
+local modes = { "n", "i", "v" }
+local keys = { "<Up>", "<Down>", "<Left>", "<Right>" }
+
+for _, mode in ipairs(modes) do
+  for _, key in ipairs(keys) do
+    vim.keymap.set(mode, key, "<Nop>")
+  end
+end
